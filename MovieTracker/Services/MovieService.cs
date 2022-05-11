@@ -55,5 +55,12 @@ namespace MovieTracker.Services
             movie.Title = movieDto.Title;
             dbContext.SaveChanges();
         }
+
+        public void Delete(Guid id)
+        {
+            var movie = GetDbModel(id);
+            dbContext.Movies.Remove(movie);
+            dbContext.SaveChanges();
+        }
     }
 }
