@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace MovieTracker.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class ReviewController : ControllerBase
     {
     }

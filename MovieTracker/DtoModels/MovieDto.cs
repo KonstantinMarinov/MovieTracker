@@ -14,14 +14,9 @@ namespace MovieTracker.DtoModels
             this.Title = movie.Title;
             this.WatchedOn = movie.WatchedOn;
         }
-
-        public Movie ToDataModel ()
+        public MovieDto()
         {
-            return new Movie
-            {
-                MovieId = MovieId,
-                Title = Title,
-            };
+
         }
     }
 }

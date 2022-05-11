@@ -1,11 +1,16 @@
+
+using Microsoft.AspNetCore.Mvc;
+using MovieTracker.Models;
+using MovieTracker.Services;
+
+[assembly: ApiController]
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<MovieTrackerContext>();
+builder.Services.AddScoped<MovieService>();
 
 var app = builder.Build();
 

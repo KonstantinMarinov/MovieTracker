@@ -1,6 +1,10 @@
 ﻿namespace MovieTracker.Providers
 {
-    public class GuidGenerator
+    public static class GuidGenerator
     {
+        public static Guid Generate()
+        {
+            return Guid.NewGuid();
+        }
     }
 }

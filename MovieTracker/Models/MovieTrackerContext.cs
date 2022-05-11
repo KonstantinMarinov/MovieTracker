@@ -39,7 +39,7 @@ namespace MovieTracker.Models
                     .HasColumnName("movie_id");
 
                 entity.Property(e => e.Title)
-                    .HasMaxLength(100)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("title");
 
@@ -56,16 +56,18 @@ namespace MovieTracker.Models
                     .ValueGeneratedNever()
                     .HasColumnName("review_id");
 
-                entity.Property(e => e.CreatedOn)
+                entity.Property(e => e.Author)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("author");
+
+                entity.Property(e => e.Created)
                     .HasColumnType("datetime")
-                    .HasColumnName("created_on");
+                    .HasColumnName("created");
+
+                entity.Property(e => e.IsDeleted).HasColumnName("is_deleted");
 
                 entity.Property(e => e.MovieId).HasColumnName("movie_id");
-
-                entity.Property(e => e.Person)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("person");
 
                 entity.Property(e => e.Rating).HasColumnName("rating");
 
@@ -73,6 +75,10 @@ namespace MovieTracker.Models
                     .HasMaxLength(1000)
                     .IsUnicode(false)
                     .HasColumnName("text");
+
+                entity.Property(e => e.Updated)
+                    .HasColumnType("datetime")
+                    .HasColumnName("updated");
             });
 
             OnModelCreatingPartial(modelBuilder);
