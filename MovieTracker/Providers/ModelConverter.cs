@@ -13,5 +13,15 @@ namespace MovieTracker.Providers
         {
             return new MovieDto(movie);
         }
+
+        public static Review ToModel(ReviewDto reviewDto)
+        {
+            return new Review(reviewDto);
+        }
+
+        public static ReviewDto ToDto(Review review)
+        {
+            return new ReviewDto(review);
+        }
     }
 }
