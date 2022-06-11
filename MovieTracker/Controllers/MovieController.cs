@@ -10,12 +10,11 @@ namespace MovieTracker.Controllers
     public class MovieController : ControllerBase
     {
         private readonly MovieService movieService;
-        private readonly MovieTrackerContext dbContext;
-
-        public MovieController(MovieService movieService, MovieTrackerContext dbContext)
+       
+        public MovieController(MovieService movieService)
         {
             this.movieService = movieService;
-            this.dbContext = dbContext;
+           
         }
 
         [HttpPost]
