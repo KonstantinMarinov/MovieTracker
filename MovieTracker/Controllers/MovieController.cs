@@ -44,7 +44,7 @@ namespace MovieTracker.Controllers
             this.movieService.Update(id, movieDto);
             return Ok();
         }
-
+        
         [HttpDelete("{id}")]
 
         public IActionResult Delete(Guid id)

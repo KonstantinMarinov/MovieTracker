@@ -8,17 +8,23 @@ namespace MovieTracker.Models
     {
         public Guid MovieId { get; set; }
         public string Title { get; set; } = null!;
+        public string? Description { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime UpdatedOn { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime WatchedOn { get; set; }
+
+        public Movie() {}
 
         public Movie(MovieDto movieDto)
         {
-            this.MovieId = movieDto.MovieId;
-            this.Title = movieDto.Title;
-            this.WatchedOn = movieDto.WatchedOn;
-        }
-
-        public Movie()
-        {
+            MovieId = movieDto.MovieId;
+            Title = movieDto.Title;
+            Description = movieDto.Description;
+            CreatedOn = movieDto.CreatedOn;
+            UpdatedOn = movieDto.UpdatedOn;
+            IsDeleted = movieDto.IsDeleted;
+            WatchedOn = movieDto.WatchedOn;
 
         }
     }
